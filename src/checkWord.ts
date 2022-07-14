@@ -36,25 +36,6 @@ function checkAdditionalWord(word: string) {
   return additionalWords[word]
 }
 
-/**
- * backkkkkbackkkkk
- */
-const GoBack = 'goBack'
-/**
- * backkkkk22222
- */
-const GoBack2 = 'goBack2'
-
-type valType = typeof GoBack
-
-/**
- * 
- * @type {Array<string>}
- */
-function go(val: valType) {
-  return val;
-}
-
 // go('')
 
 export default async function checkWord(word: string) {
