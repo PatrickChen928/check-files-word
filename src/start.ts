@@ -28,32 +28,34 @@ export async function start(files: string[], _i: string, _f: string) {
   const root = process.cwd()
   let hasErrors = false
   // console.log(files, 'filesfilesfiles')
-  const entries = fg.sync(['*'], {
-    ignore: [
-      'node_modules',
-      '**/node_modules',
-      'dist',
-      '**/dist',
-      '*.svg',
-      '.github',
-      '*.yaml',
-      '**/*.yaml',
-      '*.toml',
-      'LICENSE'
-    ],
-    baseNameMatch: true,
-    globstar: true
-  })
-  console.log(entries)
-  for (const entry of entries) {
-    const fileHasError = checkContent(path.join(root, entry))
-    if (fileHasError && !hasErrors)
-      hasErrors = true
-  }
-  for (const file of files) {
-    const fileHasError = checkContent(path.join(root, file))
-    if (fileHasError && !hasErrors)
-      hasErrors = true
+  if (!files || files.length === 0) {
+    const entries = fg.sync(['*'], {
+      ignore: [
+        'node_modules',
+        '**/node_modules',
+        'dist',
+        '**/dist',
+        '*.svg',
+        '.github',
+        '*.yaml',
+        '**/*.yaml',
+        '*.toml',
+        'LICENSE'
+      ],
+      baseNameMatch: true,
+      globstar: true
+    })
+    for (const entry of entries) {
+      const fileHasError = checkContent(path.join(root, entry))
+      if (fileHasError && !hasErrors)
+        hasErrors = true
+    }
+  } else {
+    for (const file of files) {
+      const fileHasError = checkContent(path.join(root, file))
+      if (fileHasError && !hasErrors)
+        hasErrors = true
+    }
   }
   if (!hasErrors)
     console.log(colors.green('All word is correct~~'))
