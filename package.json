@@ -1,6 +1,6 @@
 {
   "name": "check-files-word",
-  "version": "0.0.1-beta.1",
+  "version": "0.0.1",
   "packageManager": "pnpm@7.1.7",
   "description": "Check that the words in the project are spelled correctly",
   "main": "./dist/index.js",
