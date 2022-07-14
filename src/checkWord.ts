@@ -1,9 +1,5 @@
 import normalWords from '../words/big.js'
 import additionalWords from '../words/additional.js'
-// import { reporter } from 'vfile-reporter'
-// import { retext } from 'retext'
-// import retextSpell from 'retext-spell'
-// import dictionary from 'dictionary-en-gb'
 
 let normalWordMap = null
 
@@ -35,13 +31,5 @@ function checkAdditionalWord(word: string) {
 }
 
 export default async function checkWord(word: string) {
-  // return new Promise(r => {
-  //   retext()
-  //   .use(retextSpell, dictionary)
-  //   .process(word)
-  //   .then((file) => {
-  //     r(file)
-  //   })
-  // })
   return checkAdditionalWord(word) || checkNormalWord(word)
 }

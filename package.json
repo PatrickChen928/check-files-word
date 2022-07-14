@@ -79,12 +79,8 @@
   },
   "dependencies": {
     "cac": "^6.7.12",
-    "dictionary-en-gb": "^2.4.0",
     "fast-glob": "^3.2.11",
     "picocolors": "^1.0.0",
-    "retext": "^8.1.0",
-    "retext-spell": "^5.1.0",
-    "tsup": "^5.12.6",
-    "vfile-reporter": "^7.0.4"
+    "tsup": "^5.12.6"
   }
 }
