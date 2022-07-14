@@ -6,10 +6,6 @@ import checkWord from './checkWord'
 
 const wordRE = /^[a-z]+$/i
 
-// function readGitIgnore() {
-
-// }
-
 function checkContent(absolutePath: string) {
   const content = fs.readFileSync(absolutePath).toString()
   const words = content.split(' ')

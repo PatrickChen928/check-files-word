@@ -1,52 +1,46 @@
 {
   "name": "check-files-word",
   "version": "0.0.0",
-  "packageManager": "pnpm@6.32.3",
-  "description": "ts template",
-  "main": "./dist/index.cjs",
-  "types": "types/index.d.ts",
-  "type": "module",
+  "packageManager": "pnpm@7.1.7",
+  "description": "Check that the words in the project are spelled correctly",
+  "main": "./dist/index.js",
+  "types": "dist/index.d.ts",
   "bin": {
     "cfw": "./bin/cli.js"
   },
   "keywords": [
-    "TypeScript",
-    "template",
-    "cjs",
-    "mjs",
-    "umd"
+    "check file word"
   ],
   "scripts": {
     "dev": "cd playground && pnpm run dev",
-    "devdemo": "cd demo/volar && pnpm run dev",
-    "t": "ts-node ./src/checkWord.ts",
     "build": "tsup",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:run": "vitest run",
     "coverage": "vitest run --coverage",
-    "release": "bumpp --commit --push --tag && pnpm publish",
+    "release": "bumpp && pnpm publish",
     "typecheck": "tsc --noEmit",
     "fix": "eslint --fix --ext .js,.ts src tests",
-    "prepublishOnly": "nr build"
+    "prepublishOnly": "pnpm run build"
   },
   "files": [
     "dist/",
-    "types/"
+    "types/",
+    "bin"
   ],
-  "author": "cyly cp786156072@163.com",
-  "homepage": "https://github.com/ChpShy/[name]#readme",
+  "author": "cyly 786156072@qq.com",
+  "homepage": "https://github.com/ChpShy/check-files-word#readme",
   "bugs": {
-    "url": "https://github.com/ChpShy/[name]/issues"
+    "url": "https://github.com/ChpShy/check-files-word/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ChpShy/[name].git"
+    "url": "git+https://github.com/ChpShy/check-files-word.git"
   },
   "license": "MIT",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
+      "require": "./dist/index.js",
       "import": "./dist/index.mjs",
       "types": "./types/index.d.ts"
     }
@@ -62,8 +56,9 @@
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
     "@vitest/ui": "^0.7.4",
-    "bumpp": "^7.1.1",
+    "bumpp": "^8.2.1",
     "c8": "^7.11.0",
+    "changelogithub": "^0.12.4",
     "esbuild": "^0.14.27",
     "eslint": "^8.13.0",
     "eslint-config-prettier": "^8.5.0",
