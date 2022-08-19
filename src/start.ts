@@ -17,7 +17,8 @@ const DEFAULT_IGNORE = [
   '*.yaml',
   '**/*.yaml',
   '*.toml',
-  'LICENSE'
+  'LICENSE',
+  '*.test.{j|ts}',
 ]
 
 export async function checkContent(absolutePath: string) {
